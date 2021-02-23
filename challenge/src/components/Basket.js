@@ -1,20 +1,17 @@
 import React, { useState } from 'react'
 
+import Item from './Item'
+
 export default function Basket(props) {
 
-    const [emptyBasket, setEmptyBasket] = useState(true)
-
-    if (props.items === undefined || props.items.length === 0) {
-        console.log('array is empty')
-    } else {
-        console.log('array is not empty')
-    }
     return (
         <div className='basket'>
-            {emptyBasket ?
-                'Basket is empty'
+            {!props.items.length ?
+                <h2>No items in basket</h2>
                 :
-                ''
+                props.items.map(item => {
+                    <Item item={item} />
+                })
             }
         </div>
     )

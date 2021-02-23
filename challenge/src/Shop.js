@@ -11,8 +11,12 @@ export default function Shop(props) {
     const [itemsCount, setItemsCount] = useState(0)
     const [basketItems, setBasketItems] = useState([])
 
+    const addItem = (item) => {
+        setBasketItems([...basketItems, item])
+    }
+
     let cards = data.map(card => (
-        <Card key={card.productId} card={card} />
+        <Card addItem={addItem} key={card.productId} card={card} />
     ))
     console.log(data)
 

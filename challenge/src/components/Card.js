@@ -32,7 +32,7 @@ export default function Card(props) {
                 </ul>
 
             </div>
-            <Button class='add' txt={`Add to Basket £${price}`} />
+            <Button click={() => props.addItem(props.card)} class='add' txt={`Add to Basket £${price}`} />
         </section>
     )
 }
