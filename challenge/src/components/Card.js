@@ -1,6 +1,6 @@
 import Button from './Button'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 export default function Card(props) {
 
@@ -21,8 +21,11 @@ export default function Card(props) {
 
     const handleClick = card => {
         props.addItem(card)
+
+        // added animation
         setButtonTxt('Item added')
         setButtonClass('added')
+
         setTimeout(() => {
             // reset button
             setButtonTxt(`Add to Basket £${price}`)
@@ -35,11 +38,16 @@ export default function Card(props) {
 
     return (
         <section className='card'>
+
             <div className='card-container'>
+
                 <div className='img-container'>
+
                     <img className='img' src={`./${image}`} alt={title} />
                 </div>
+
                 <h3 className='title'>{title}</h3>
+
                 <div className='sku'>{sku}</div>
 
                 <ul className='points'>
@@ -49,7 +57,12 @@ export default function Card(props) {
                 </ul>
 
             </div>
-            <Button click={() => handleClick(props.card)} class={`bottom ${buttonClass}`} txt={buttonTxt} />
+
+            <Button
+                click={() => handleClick(props.card)}
+                class={`bottom ${buttonClass}`}
+                txt={buttonTxt} />
+
         </section>
     )
 }

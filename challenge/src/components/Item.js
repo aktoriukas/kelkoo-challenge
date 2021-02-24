@@ -7,13 +7,16 @@ export default function Item(props) {
 
     return (
         <section className='item grid'>
+
             <h4 className='name'>{title}</h4>
+
             <Button
                 class='remove'
                 txt='remove'
-                click={() => props.removeItem(productId)}
-            />
+                click={() => props.removeItem(productId)} />
+
             <div className='count'>x{count}</div>
+
             <div className='price'>{(Math.round((price * count) * 100) / 100).toFixed(2)}</div>
         </section>
     )

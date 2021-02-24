@@ -42,7 +42,7 @@ export default function Shop(props) {
                 itemsCopy[i].count--
                 setItemsCount(itemsCount - 1)
 
-                //remove with 0 quantity
+                //remove if quantity 0
 
                 if (itemsCopy[i].count === 0) {
                     setBasketItems(itemsCopy.filter(item => item.productId !== id))
@@ -54,6 +54,7 @@ export default function Shop(props) {
         }
     }
 
+    //make cards
     let cards = data.map(card => (
         <Card addItem={addItem} key={card.productId} card={card} />
     ))
@@ -62,7 +63,9 @@ export default function Shop(props) {
         <>
 
             <header className='header'>
+
                 <h1 className='logo'>SHOP</h1>
+
                 <Button
                     class='basket'
                     click={() => setBasket(!basket)}
@@ -79,9 +82,12 @@ export default function Shop(props) {
             </header>
 
             <div className='products grid'>
+
                 {cards}
             </div>
+
             <div className='background'>
+
                 <img src={Img} alt='background' />
             </div>
         </>

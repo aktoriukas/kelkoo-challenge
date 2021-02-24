@@ -25,24 +25,33 @@ export default function Basket(props) {
 
     return (
         <div id='basket'>
+
             {!items.length ?
+
                 <h2 className='title'>Your shop basket is empty.</h2>
+
                 :
+
                 <>
                     <h2 className='title'>Your Items:</h2>
+
                     {items.map(item => (
+
                         <Item
                             key={item.productId}
                             item={item}
-                            removeItem={props.removeItem}
-                        />
+                            removeItem={props.removeItem} />
+
                     ))}
                 </>
             }
             <div className='total'>
+
                 Total:
                 <span className='sum price'>{total}</span>
+
             </div>
+
             <span onClick={() => props.setBasket(false)} className='x'>✖</span>
         </div>
     )
