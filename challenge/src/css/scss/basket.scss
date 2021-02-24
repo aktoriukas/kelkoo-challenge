@@ -1,0 +1,91 @@
+#basket{
+    position: absolute;
+    background-color: var(--off-blue);
+    right: 0;
+    top: 8rem;
+    width: 90%;
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    z-index: 5;
+    animation: zoom .2s ease-in-out;
+    box-shadow: 0 0 30px var(--off-black);
+    .title{
+        color: var(--white);
+        font-size: $xx-large;
+        border-bottom: 2px solid var(--white);
+    }
+    .total{
+        margin-top: 2rem;
+        padding-top: .5rem;
+        border-top: 2px solid var(--white);
+        text-align: right;
+        font-size: $x-large;
+        color: var(--white);
+        .sum{
+            width: 8rem;
+            display: inline-block;
+        }
+    }
+    .item.grid{
+        margin-top: 2rem;
+        border-bottom: 1px solid var(--off-white);
+        padding-bottom: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 0.75fr;
+        grid-template-areas: 
+        'name name name'
+        'button count price';
+        &:last-of-type{
+            border-bottom-width: 0px;
+        }
+        .name{
+            grid-area: name;
+            font-size: $x-large;
+            padding-bottom: .5rem;
+            color: var(--off-black);
+        }
+        .remove{
+            grid-area: button;
+            padding: .5rem .75rem;
+            width: fit-content;
+            height: fit-content;
+            margin: auto auto auto 0;
+            border-radius: .5rem;
+            font-size: $normal;
+            background-color: var(--red);
+            box-shadow: 0 0 4px var(--white);
+        }
+        .count{
+            grid-area: count;
+            margin: auto 0 auto auto;
+            font-size: $regular;
+        }
+        .price{
+            grid-area: price;
+            font-size: $large;
+            margin: auto 0 auto auto;
+        }
+        .price, .count {
+            color: var(--white);
+        }
+
+    }
+
+    // ARROW
+    &::before{
+        content: '';
+        position: absolute;
+        right: 2rem;
+        top: -40px;
+        width: 0; 
+        height: 0; 
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+  
+        border-bottom: 40px solid var(--off-blue);
+    }
+    @media screen and (min-width: 700px) {
+        width: 50%;
+        right: 1rem;
+    }
+}

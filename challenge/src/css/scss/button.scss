@@ -1,0 +1,54 @@
+.button{
+    position: relative;
+    background-color: var(--blue);
+    font-size: $x-large;
+    color: var(--white);
+    transition: color .5s ease;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+    &.basket{
+        width: fit-content;
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+    &.bottom{
+        width: 100%;
+        margin: auto auto 0 auto;
+        padding: 1rem 0;
+    }
+    &.added{
+        background-color: var(--green);
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba(255, 255, 255, 0.3);
+        transform: scale(0.1);
+        opacity: 0;
+        border-radius: 1rem;
+        transition: all .2s cubic-bezier(0.4, 0.03, 0.5, 0.9);
+    }
+    &:hover{
+        color: var(--off-black);
+        &:after{
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    }
+}
+.x{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    color: var(--white);
+    font-size: $x-large;
+    transition: color .2s ease;
+    &:hover{
+        color: var(--off-white);
+    }
+}

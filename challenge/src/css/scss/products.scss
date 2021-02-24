@@ -2,7 +2,7 @@
     max-width: $max-content-width;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
     padding-bottom: 10rem;
     .card{
@@ -11,28 +11,18 @@
         background-color: var(--off-white);
         border-radius: 1rem;
         overflow: hidden;
+        backdrop-filter: blur(50px);
+        box-shadow: 0 0 10px var(--off-white);
         .card-container{
             padding: 1rem 1rem 2rem;
             height: 100%;
-        }
-        .img-container{
-            height: 10rem;
-            width: 50%;
-            margin: 0 auto 2rem;
-            background-color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 1.5rem;
-            .img{
-                height: 90%;
-                width: auto;
-            }
         }
         .title{
             font-size: $x-large;
             margin-bottom: 1rem;
             text-align: center;
+            color: var(--off-black);
+            min-height: 5rem;
         }
         .sku{
             text-align: center;
@@ -58,10 +48,10 @@
             }
         }
     }
-    @media screen and (max-width: 1200px) {
+    @media screen and (min-width: 700px) {
         grid-template-columns: repeat(2, 1fr);
     }
-    @media screen and (max-width: 700px) {
-        grid-template-columns: repeat(1, 1fr);
+    @media screen and (min-width: 1200px) {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
