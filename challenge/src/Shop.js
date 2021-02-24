@@ -1,3 +1,4 @@
+// COLOURS ============================
 import React, { useState } from 'react'
 
 import data from './data/products.json'
@@ -61,6 +62,7 @@ export default function Shop(props) {
         <>
 
             <header className='header'>
+                <h1 className='logo'>SHOP</h1>
                 <Button
                     class='basket'
                     click={() => setBasket(!basket)}

@@ -2,17 +2,20 @@
     position: absolute;
     background-color: var(--off-blue);
     right: 0;
-    top: 8rem;
+    top: 17rem;
     width: 90%;
     border-radius: 1rem;
     padding: 2rem 1rem;
     z-index: 5;
     animation: zoom .2s ease-in-out;
     box-shadow: 0 0 30px var(--off-black);
+    overflow: hidden;
     .title{
         color: var(--white);
         font-size: $xx-large;
         border-bottom: 2px solid var(--white);
+        animation: slide-right .5s ease-in-out;
+        position: relative;
     }
     .total{
         margin-top: 2rem;
@@ -21,12 +24,16 @@
         text-align: right;
         font-size: $x-large;
         color: var(--white);
+        position: relative;
+        animation: slide-left .5s ease-in-out;
         .sum{
             width: 8rem;
             display: inline-block;
         }
     }
     .item.grid{
+        animation: slide-right .5s ease-in-out;
+        position: relative;
         margin-top: 2rem;
         border-bottom: 1px solid var(--off-white);
         padding-bottom: 1rem;
@@ -71,21 +78,11 @@
 
     }
 
-    // ARROW
-    &::before{
-        content: '';
-        position: absolute;
-        right: 2rem;
-        top: -40px;
-        width: 0; 
-        height: 0; 
-        border-left: 50px solid transparent;
-        border-right: 50px solid transparent;
-  
-        border-bottom: 40px solid var(--off-blue);
-    }
     @media screen and (min-width: 700px) {
         width: 50%;
         right: 1rem;
+    }
+    @media screen and (min-width: 1200px) {
+        top: 14rem;
     }
 }

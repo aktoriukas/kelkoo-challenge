@@ -6,3 +6,35 @@
         transform: scale(1);
     }
 }
+@keyframes slide-right {
+    0%{
+        left: -100%
+    }
+    100%{
+        left: 0;
+    }
+}
+@keyframes slide-left {
+    0%{
+        left: 200%
+    }
+    100%{
+        left: 0;
+    }
+}
+@keyframes scale-up {
+    0%{
+        transform: scale(0.9);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes opacity-up {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

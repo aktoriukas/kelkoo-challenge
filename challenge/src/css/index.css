@@ -5,8 +5,8 @@
   --off-black: #302f2f;
   --white: #ffffff;
   --blue: #66c2ff;
-  --red: #ff7d66;
-  --green: #66ff75;
+  --red: #fda08f;
+  --green: #6eb875;
   --off-blue: #94c0dd;
   --off-white: #cccccc92;
   font-family: 'Roboto', sans-serif; }
@@ -66,7 +66,8 @@ button {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: -1; }
+  z-index: -1;
+  animation: opacity-up 2s ease-in-out; }
   .background img {
     min-width: 100%;
     width: auto;
@@ -87,7 +88,8 @@ button {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
-  padding-bottom: 10rem; }
+  padding-bottom: 10rem;
+  z-index: 5; }
   .products.grid .card {
     display: flex;
     flex-direction: column;
@@ -95,7 +97,8 @@ button {
     border-radius: 1rem;
     overflow: hidden;
     backdrop-filter: blur(50px);
-    box-shadow: 0 0 10px var(--off-white); }
+    box-shadow: 0 0 10px var(--off-white);
+    animation: scale-up .5s ease-in-out; }
     .products.grid .card .card-container {
       padding: 1rem 1rem 2rem;
       height: 100%; }
@@ -135,28 +138,35 @@ button {
   position: absolute;
   background-color: var(--off-blue);
   right: 0;
-  top: 8rem;
+  top: 17rem;
   width: 90%;
   border-radius: 1rem;
   padding: 2rem 1rem;
   z-index: 5;
   animation: zoom .2s ease-in-out;
-  box-shadow: 0 0 30px var(--off-black); }
+  box-shadow: 0 0 30px var(--off-black);
+  overflow: hidden; }
   #basket .title {
     color: var(--white);
     font-size: 2.5rem;
-    border-bottom: 2px solid var(--white); }
+    border-bottom: 2px solid var(--white);
+    animation: slide-right .5s ease-in-out;
+    position: relative; }
   #basket .total {
     margin-top: 2rem;
     padding-top: .5rem;
     border-top: 2px solid var(--white);
     text-align: right;
     font-size: 1.5rem;
-    color: var(--white); }
+    color: var(--white);
+    position: relative;
+    animation: slide-left .5s ease-in-out; }
     #basket .total .sum {
       width: 8rem;
       display: inline-block; }
   #basket .item.grid {
+    animation: slide-right .5s ease-in-out;
+    position: relative;
     margin-top: 2rem;
     border-bottom: 1px solid var(--off-white);
     padding-bottom: 1rem;
@@ -190,27 +200,57 @@ button {
       margin: auto 0 auto auto; }
     #basket .item.grid .price, #basket .item.grid .count {
       color: var(--white); }
-  #basket::before {
-    content: '';
-    position: absolute;
-    right: 2rem;
-    top: -40px;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 40px solid var(--off-blue); }
   @media screen and (min-width: 700px) {
     #basket {
       width: 50%;
       right: 1rem; } }
+  @media screen and (min-width: 1200px) {
+    #basket {
+      top: 14rem; } }
 
 .header {
   margin: 5rem auto;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
   max-width: 1600px;
   position: relative; }
+  .header .logo {
+    font-size: 7.5rem;
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    width: 7rem;
+    height: 7rem;
+    position: relative;
+    z-index: 1;
+    margin: auto auto 4rem;
+    left: -6rem; }
+    .header .logo::before {
+      content: '';
+      left: 0;
+      top: 0;
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-color: var(--white);
+      transform: rotate(35deg); }
+    .header .logo::after {
+      content: '';
+      left: 1rem;
+      top: 0;
+      position: absolute;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      background-color: var(--red);
+      transform: rotate(35deg); }
+    @media screen and (min-width: 1200px) {
+      .header .logo {
+        margin: 0;
+        left: 1rem; } }
 
 .button {
   position: relative;
@@ -223,7 +263,8 @@ button {
   .button.basket {
     width: fit-content;
     padding: 1.5rem;
-    border-radius: 1rem; }
+    border-radius: 1rem;
+    margin: 0 0 0 auto; }
   .button.bottom {
     width: 100%;
     margin: auto auto 0 auto;
@@ -264,5 +305,25 @@ button {
     transform: scale(0); }
   100% {
     transform: scale(1); } }
+@keyframes slide-right {
+  0% {
+    left: -100%; }
+  100% {
+    left: 0; } }
+@keyframes slide-left {
+  0% {
+    left: 200%; }
+  100% {
+    left: 0; } }
+@keyframes scale-up {
+  0% {
+    transform: scale(0.9); }
+  100% {
+    transform: scale(1); } }
+@keyframes opacity-up {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 /*# sourceMappingURL=index.css.map */

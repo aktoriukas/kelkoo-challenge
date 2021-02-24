@@ -10,8 +10,6 @@ $large:     1.3rem;
 $x-large:   1.5rem;
 $xx-large:  2.5rem;
 
-// COLOURS ============================
-
 // WIDTH ==============================
 
 $max-content-width: 1600px;
@@ -21,8 +19,8 @@ $max-content-width: 1600px;
     --off-black: #302f2f;
     --white: #ffffff;
     --blue: #66c2ff;
-    --red: #ff7d66;
-    --green: #66ff75;
+    --red: #fda08f;
+    --green: #6eb875;
     --off-blue: #94c0dd;
     --off-white: #cccccc92;
 
@@ -89,6 +87,7 @@ button {
     top:0;
     left: 0;
     z-index: -1;
+    animation: opacity-up 2s ease-in-out;
     img{
         min-width: 100%;
         width: auto;
